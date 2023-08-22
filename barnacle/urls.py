@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+import debug_toolbar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('playground/', include('playground.urls')) # this is saying that any requests starting with 'playground' should be routed to 
+    path('playground/', include('playground.urls')), # this is saying that any requests starting with 'playground' should be routed to 
     # the urls in our playground app
+    path('__debug__/', include(debug_toolbar.urls))
 ]

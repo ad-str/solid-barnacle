@@ -1,6 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+# for trying out debugging
+def calculate():
+    x = 1
+    y = 2
+    return x
+
 # Create your views here.
 def say_hello(request):
     # return an instance of the HttpResponse class
@@ -14,4 +20,8 @@ def say_hello(request):
 
     # now try adding some dynamic value
     # the next argument can be any mapping from string to object - try dictionary
-    return render(request, 'hello.html', {'name': 'Adam'})
+    # return render(request, 'hello.html', {'name': 'Adam'})
+
+    # now debugging - add breakpoint and run debug - remove when done
+    x = calculate()
+    return render(request, 'hello.html')
