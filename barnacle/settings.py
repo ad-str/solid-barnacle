@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'playground.apps.PlaygroundConfig',
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sessions',
     'django.contrib.contenttypes',
     'django.contrib.messages',
     'django.contrib.staticfiles',
