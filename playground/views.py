@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
+from .models import Game
 
 # for trying out debugging
 def calculate():
@@ -25,3 +26,7 @@ def say_hello(request):
     # now debugging - add breakpoint and run debug - remove when done
     x = calculate()
     return render(request, 'hello.html')
+
+def detail(request, game_id):
+    game_entry = get_object_or_404(Game, id=game_id)
+    return render(request, 'game_details.html', {'game_entry': game_entry})
